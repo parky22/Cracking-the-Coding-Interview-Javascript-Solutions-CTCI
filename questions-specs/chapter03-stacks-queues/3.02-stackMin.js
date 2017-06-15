@@ -1,4 +1,6 @@
 'use strict';
+// QUESTION: How would you design a stack which, in addition to push and pop, has a function min which returns
+// the minimum element? Push, pop, and min should all operate in O(1) time.
 
 // USES ADDITIONAL ARRAY TO KEEP TRACK OF MIN'S AND COUNTERS TO KEEP TRACK OF ARRAY LENGTHS
 export class MinStack1 {

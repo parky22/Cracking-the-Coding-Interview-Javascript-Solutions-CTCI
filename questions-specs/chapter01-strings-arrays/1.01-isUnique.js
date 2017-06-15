@@ -65,7 +65,7 @@ export function isUnique4(str) {
 export function isUnique5(str) {
   const chars = {};
   for (const letter of str){
-    if(chars[letter]) return false;
+    if (chars[letter]) return false;
     else chars[letter] = true;
   }
   return true;
