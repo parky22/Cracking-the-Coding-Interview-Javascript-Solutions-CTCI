@@ -50,3 +50,23 @@ export function isUnique3(str) {
 
   return true;
 }
+
+// YP: O(N^2) TIME, O(N) SPACE ?
+export function isUnique4(str) {
+  let compare = '';
+  for(const letter of str) {
+    if(compare.indexOf(letter) === -1) compare += letter;
+    else return false
+  }
+  return true;
+}
+
+// YP: O(N) TIME, O(N) SPACE ?
+export function isUnique5(str) {
+  const chars = {};
+  for (const letter of str){
+    if(chars[letter]) return false;
+    else chars[letter] = true;
+  }
+  return true;
+}

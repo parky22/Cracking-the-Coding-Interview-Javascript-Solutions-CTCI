@@ -1,5 +1,22 @@
 'use strict';
 
+// YP:
+export function removeDupes(list) {
+  if(!list || !list.next) return list;
+  const set = new Set();
+  set.add(list.value);
+  //[2, 4, 5, 4, 5, 4, 6, 7, 6, 8]
+  while(list.next){
+    if(set.has(list.next.value)){
+      list.next = list.next.next;
+    } else {
+      set.add(list.next.value);
+      list = list.next;
+    }
+  }
+}
+
+
 // O(N) TIME --- O(N) SPACE
 
 export function removeDupes1(list) {
