@@ -27,22 +27,25 @@ export function KthToLastYP(list, k) {
 
   return list.value;
 }
+// YP: (runner) O(N) TIME, O(1) SPACE
+// slight optimized of counter version.
+export function KthToLastRunnerYP(list, k){
+  if (!list) throw Error('invalid list');
 
+  let p1 = list, p2 = list;
 
+  for (let i = 0; i < k; i++){
+    if (!p1.next) throw Error('list is not long enough');
+    p1 = p1.next;
+  }
 
+  while (p1.next){
+    p1 = p1.next;
+    p2 = p2.next;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
+  return p2.value;
+}
 
 
 // USING A RUNNER
