@@ -1,5 +1,50 @@
 'use strict';
 
+//QUESTION: Implement an algorithm to find the kth to last element of a singly linked list.
+
+// YP: (counter) O(N) TIME, O(1) SPACE
+// [8, 5, 1], 0
+export function KthToLastYP(list, k) {
+  if(!list) throw Error('invalid list');
+
+  let counter = -1;
+  let currentNode = list;
+  // First count all the nodes
+  while(currentNode){
+    counter++;
+    currentNode = currentNode.next;
+  }
+  // Check if k is greater than counter.
+  if(k > counter) throw Error('list is not long enough');
+
+  // k=0, counter=2
+  // k=1, counter=1
+  // k=2, counter=0
+  while(counter > k){
+    list = list.next;
+    counter--;
+  }
+
+  return list.value;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // USING A RUNNER
 // O(N) TIME --- O(1) SPACE
 

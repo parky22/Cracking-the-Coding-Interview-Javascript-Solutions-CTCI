@@ -5,7 +5,7 @@ import * as funcs from './2.02-KthToLast';
 for (let key in funcs) {
   let func = funcs[key];
 
-  describe('ch2-q2: ' + key, function() {
+  describe.only('ch2-q2: ' + key, function() {
 
     it('throws an error if list is not an array', function() {
       expect(() => func(null)).to.throw('invalid list');
